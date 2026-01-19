@@ -67,7 +67,7 @@ $(document).ready(function () {
     }
 
     function renderTransaction(tx) {
-        const esIngreso = tx.type === 'deposito' || tx.type === 'recepcion';
+        const esIngreso = tx.type === 'deposito' || tx.type === 'recepción';
         const sign = esIngreso ? '+' : '−';
         const color = esIngreso ? 'text-success' : 'text-danger';
 
