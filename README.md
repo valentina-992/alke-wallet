@@ -45,6 +45,10 @@ Debido a que los usuarios deben estar en el localStorage del navegador, favor cr
 - Transacciones filtradas
 <img width="922" height="413" alt="Captura de pantalla 2026-01-19 a la(s) 12 34 53 a m" src="https://github.com/user-attachments/assets/e61e97fb-92c2-4fb5-82c1-701d88e71fe4" />
 
+- Ejemplo de vista vertical (smartphone)
+<img width="401" height="575" alt="Captura de pantalla 2026-01-19 a la(s) 12 51 19 a m" src="https://github.com/user-attachments/assets/8cfd4df8-1a9a-40b4-a77d-4d2cc10e35e2" />
+
+
 
 
 
