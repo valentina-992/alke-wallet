@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositar</title>
+    <link rel="icon" href="../img/wallet-solid.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="deposit">
+    <div class="container">
+      <h2>Depositar</h2>
+      <!-- Mostrar el saldo -->
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <h6 class="text-muted mb-1">Saldo disponible</h6>
+          <h2 id="saldo" class="fw-bold"></h2>
+        </div>
+      </div>
+    
+      <!-- Formulario de depósito -->
+      <form id="formDeposit">
+        <div class="mb-3">
+          <label for="depositAmount" class="form-label">Monto a depositar:</label>
+          <input type="number" class="form-control" id="depositAmount" placeholder="Ingrese el monto a depositar.">
+        </div>
+        <button type="submit" class="btn btn-primary w-100" id="btnDeposit">Realizar depósito</button>
+      </form>
+
+      <!-- Espacio para alertas -->
+      <div id="alert-container"></div>
+
+      <!-- Regreso al menú principal -->
+      <a href="menu.html" class="btn btn-secondary w-100 mt-3">Volver al menú principal</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/deposit.js"></script>
+</body>
+</html>
