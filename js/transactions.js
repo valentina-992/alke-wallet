@@ -12,9 +12,24 @@ $(document).ready(function () {
     ) || [];
 
     // SOLO las del usuario logueado
-    const transactions = todas.filter(
-        tx => tx.owner === usuario.email
-    );
+    const transactions = todas.filter(tx => {
+        // Depósitos o retiros: owner debe coincidir con el usuario
+        if (tx.type === 'deposito' || tx.type === 'retiro') {
+            return tx.owner === usuario.email;
+        }
+    
+        if (tx.type === 'envío') {
+            return tx.to === usuario.email || tx.from === usuario.email; // envíos
+        }
+    
+        if (tx.type === 'recepción') {
+            return tx.to === usuario.email || tx.from === usuario.email; // recepciones
+        }
+    
+    
+        return false;
+    });
+    
 
     // Mostrar inicial
     mostrarUltimosMovimientos('todos');
@@ -25,10 +40,8 @@ $(document).ready(function () {
         mostrarUltimosMovimientos(filtro);
     });
 
-    // --------------------
-    // Funciones
-    // --------------------
 
+    // Funciones
     function mostrarUltimosMovimientos(filtro) {
         $list.empty();
 
@@ -66,6 +79,8 @@ $(document).ready(function () {
                     <small class="text-muted">
                         ${new Date(tx.date).toLocaleString('es-CL')}
                     </small>
+                    </br>
+                    <span>${getTipoTransaccion(tx)}</span>
                 </div>
 
                 <span class="fw-semibold ${color}">
@@ -77,18 +92,14 @@ $(document).ready(function () {
 
     function getTipoTransaccion(tx) {
         switch (tx.type) {
-            case 'deposito':
-                return 'Depósito';
-            case 'retiro':
-                return 'Retiro';
-            case 'envio':
-                return `Transferencia enviada a ${tx.to}`;
-            case 'recepcion':
-                return `Transferencia recibida de ${tx.from}`;
-            default:
-                return 'Movimiento';
+            case 'deposito': return 'Depósito';
+            case 'retiro': return 'Retiro';
+            case 'envío': return `Transferencia enviada a ${tx.to}`;
+            case 'recepción': return `Transferencia recibida de ${tx.from || 'alguien'}`;
+            default: return 'Movimiento';
         }
     }
+    
 
     function getBadge(tx) {
         switch (tx.type) {
@@ -96,9 +107,9 @@ $(document).ready(function () {
                 return `<span class="badge badge-deposito">Depósito</span>`;
             case 'retiro':
                 return `<span class="badge badge-retiro">Retiro</span>`;
-            case 'envio':
+            case 'envío':
                 return `<span class="badge badge-envio">Envío</span>`;
-            case 'recepcion':
+            case 'recepción':
                 return `<span class="badge badge-recepcion">Recepción</span>`;
         }
     }
