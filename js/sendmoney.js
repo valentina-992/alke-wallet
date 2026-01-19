@@ -237,12 +237,24 @@ $(document).ready(function () {
         updateUsuario(emisor);
         updateUsuario(receptor);
     
+        const fecha = new Date().toISOString();
+
+        // Transacción del emisor
         saveTransaction({
             type: 'envío',
             from: emisor.email,
             to: receptor.email,
             amount,
-            date: new Date().toISOString()
+            date: fecha
+        });
+
+        // Transacción del receptor
+        saveTransaction({
+            type: 'recepción',
+            from: emisor.email,
+            to: receptor.email,
+            amount,
+            date: fecha
         });
     
         showSendFeedback(`Enviaste $${amount.toLocaleString('es-CL')} a ${selectedContact.name}`);
