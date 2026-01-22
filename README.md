@@ -37,7 +37,7 @@ Debido a que los usuarios deben estar en el localStorage del navegador, favor cr
 <img width="892" height="717" alt="Captura de pantalla 2026-01-18 a la(s) 11 53 06 p m" src="https://github.com/user-attachments/assets/6d20c71a-e545-42fd-aa7d-9193a0b8f26e" />
 
 - Envío exitoso de dinero
-<img width="781" height="688" alt="Captura de pantalla 2026-01-19 a la(s) 12 01 23 a m" src="https://github.com/user-attachments/assets/fcd3e4de-90fb-464b-a687-2428ee8f80b2" />
+<img width="781" height="688" alt="Captura de pantalla 2026-01-19 a la(s) 12 01 23 a m" src="https://github.com/user-attachments/assets/5152c917-188f-4e24-af8b-6e83d016cbda" />
 
 - Últimos movimientos
 <img width="915" height="852" alt="Captura de pantalla 2026-01-19 a la(s) 12 34 41 a m" src="https://github.com/user-attachments/assets/6079f3c1-a7a5-4e7e-a963-b6fe82f25972" />
